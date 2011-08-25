@@ -1,0 +1,3 @@
+ # Include BlogExample default styles
+
+page.includeCSS.tx_cccoshoutbox = EXT:ccco_shoutbox/Resources/Public/Css/ccco_shoutbox.css
