@@ -1,0 +1,35 @@
+<f:form action="Shout" controller="Shout" enctype="multipart/form-data">
+<div id="bx_shouts">
+</div>
+<f:form.textbox property="lastname" id="tx-ccco_shoutbox-name"></f:form.textbox><br />
+<f:form.textbox property="lastname" id="tx-ccco_shoutbox-shout"></f:form.textbox>
+<div id="bn_shout">
+</div>
+<script type="text/javascript">
+ajaxUrl = "{f:uri.action(action:'ajax', pageType:'99')}";
+ 
+
+    $(document).ready(function(){
+ 
+        $('#bn_shout').click(function(){
+            $('#bx_shouts').text('List(s):');
+			//alert("hhhhh");
+        });
+ 
+        /*$('#ajax').click(function(){
+            $.getJSON(ajaxUrl, function(data) {
+                var items = [];
+ 
+                $.each(data, function(key, val) {
+                    items.push('<li id="'   key   '">'   val   '</li>');
+                });
+ 
+                $('<ul/>', {
+                html: items.join('')
+                }).appendTo('#list');
+            });
+        });
+    });*/
+})
+</script>
+</f:form>
