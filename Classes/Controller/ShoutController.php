@@ -26,7 +26,7 @@
 /**
  * The blog controller for the BlogExample extension
  */
-class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controller_ActionController {
+class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controller_ActionController{
 
 	/**
 	 * @var Tx_BlogExample_Domain_Model_BlogRepository
@@ -67,6 +67,10 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 * @param Tx_BlogExample_Domain_Model_Blog $newBlog A fresh Blog object which has not yet been added to the repository
 	 * @return void
 	 */
+	 public function addShout(){
+		 /**/
+		 
+	 }
 	
 }
 

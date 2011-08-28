@@ -1,18 +1,24 @@
- # Plugin configuration
-plugin.tx_ccco_shoutbox{
-	tmp.ajaxConf = PAGE
-	tmp.ajaxConf {
-  		typeNum = 1249058000
-  		config {
-    		disableAllHeaderCode = 1
-    		xhtml_cleaning = 0
-    		admPanel = 0
-  		}
-	}
-
-	my_plugin_page < tmp.ajaxConf
-	my_plugin_page {
-  		typeNum = 1296727024
-  		10 < tt_content.list.20.myplugin_pi1
-	}
+# AJAX Page Prototype
+#
+lib.AJAXPrototype= PAGE
+lib.AJAXPrototype {
+    typeNum = 896571
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+            debug = 0
+            no_cache = 1
+        additionalHeaders = Content-type:application/json
+    }
+}
+ 
+ 
+#
+# Konkreter Pagetype
+#
+AJAX_Plugintyp < lib.AJAXPrototype
+AJAX_Plugintyp {
+    typeNum = 89657201
+    10 < tt_content.list.20.ccco_shoutbox
 }
