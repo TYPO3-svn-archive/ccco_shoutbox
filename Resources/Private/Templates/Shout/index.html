@@ -25,7 +25,7 @@ $(document).ready(function(){
 		});*/
 		
 		
-		$.ajax({
+		/*$.ajax({
     			url: "index.php",
     			data: "tx_ccco_shoutbox_domain_model_shout[controller]=ShoutController&tx_ccco_shoutbox_domain_model_shout[action]=getData&type=89657201",
 				//data: "www.hodler.ch/judas",
@@ -33,7 +33,17 @@ $(document).ready(function(){
     			success: function(result) {
         		alert(result);
     		}
-		});
+		});*/
+		
+		$.ajax({
+  			url: "test.php",
+  			cache: false,
+			data: "name=John&location=Boston",
+  			success: function(html){
+    			//$("#results").append(html);
+				alert("bong");
+  		}
+});
 		
 
 
