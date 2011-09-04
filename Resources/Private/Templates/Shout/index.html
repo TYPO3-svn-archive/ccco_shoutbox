@@ -27,6 +27,7 @@ $(document).ready(function(){
 		
 		/*$.ajax({
     			url: "index.php",
+				cache: false,
     			data: "tx_ccco_shoutbox_domain_model_shout[controller]=ShoutController&tx_ccco_shoutbox_domain_model_shout[action]=getData&type=89657201",
 				//data: "www.hodler.ch/judas",
 				// tx_ccco_shoutbox_domain_model_shout
@@ -37,8 +38,10 @@ $(document).ready(function(){
 		
 		$.ajax({
   			url: "test.php",
+			type: "GET",
   			cache: false,
 			data: "name=John&location=Boston",
+			data: "name=mutherficker&location=lacooljay",
   			success: function(html){
     			//$("#results").append(html);
 				alert("bong");
