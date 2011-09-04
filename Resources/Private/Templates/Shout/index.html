@@ -35,19 +35,29 @@ $(document).ready(function(){
         		alert(result);
     		}
 		});*/
-		
-		$.ajax({
+		//$('#inp_date').val(formated);
+		/*$.ajax({
   			url: "test.php",
 			type: "GET",
   			cache: false,
-			data: "name=John&location=Boston",
-			data: "name=mutherficker&location=lacooljay",
+			data: "name="+$('#tx-ccco_shoutbox-name').val()+"&location="+$('#tx-ccco_shoutbox-shout').val(),
   			success: function(html){
     			//$("#results").append(html);
 				alert("bong");
   		}
-});
+		});*/
 		
+		$.post("test.php", { name: "John", time: "2pm" } );
+		$.ajax({
+  			url: "test.php",
+			type: "POST",
+  			cache: false,
+			data: "name="+$('#tx-ccco_shoutbox-name').val()+"&location="+$('#tx-ccco_shoutbox-shout').val(),
+  			success: function(html){
+    			//$("#results").append(html);
+				alert("bong");
+  		}
+		});
 
 
 		
