@@ -24,7 +24,7 @@
  ***************************************************************/
 
 /**
- * A repository for persons
+ * A repository for shouts
  */
 class Tx_BlogExample_Domain_Repository_ShoutRepository extends Tx_Extbase_Persistence_Repository {
 
