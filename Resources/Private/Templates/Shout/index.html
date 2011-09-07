@@ -1,12 +1,14 @@
 <f:form action="Shout" controller="Shout" enctype="multipart/form-data">
+<f:link.action action="show">action link</f:link.action>
 <div id="bx_shouts">
 </div>
 <f:form.textbox property="lastname" id="tx-ccco_shoutbox-name"></f:form.textbox><br />
 <f:form.textbox property="lastname" id="tx-ccco_shoutbox-shout"></f:form.textbox>
+<!--<f:uri.action action="show" />-->
 <div id="bn_shout">
 </div>
 <script type="text/javascript">
-ajaxUrl = "{f:uri.action(action:'ajax', pageType:'99')}";
+
  
 
 $(document).ready(function(){
@@ -36,17 +38,31 @@ $(document).ready(function(){
     		}
 		});*/
 		//$('#inp_date').val(formated);
-		/*$.ajax({
+		/*var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
+		$.ajax({
   			url: "test.php",
-			type: "GET",
+			type: "POST",
   			cache: false,
-			data: "name="+$('#tx-ccco_shoutbox-name').val()+"&location="+$('#tx-ccco_shoutbox-shout').val(),
+		    data: dataString,
   			success: function(html){
     			//$("#results").append(html);
 				alert("bong");
   		}
 		});*/
 		
+		
+		
+		var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
+		$.ajax({
+  			url: "index.php",
+  			cache: false,
+		    data: "tx_cccoshoutbox_pi1[controller]=ShoutController&tx_cccoshoutbox_pi1[action]=getData&type=89657201",
+  			success: function(html){
+    			//$("#results").append(html);
+				alert("bong");
+  		}
+		});
+		/*
 		$.post("test.php", { name: "John", time: "2pm" } );
 		$.ajax({
   			url: "test.php",
@@ -58,6 +74,7 @@ $(document).ready(function(){
 				alert("bong");
   		}
 		});
+		*/
 
 
 		
