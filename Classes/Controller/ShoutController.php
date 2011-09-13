@@ -27,7 +27,6 @@
  * The blog controller for the BlogExample extension
  */
 class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controller_ActionController{
-
 	/**
 	 * @var Tx_BlogExample_Domain_Model_PostRepository
 	 */
@@ -41,23 +40,35 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 
 
 	/**
-	 * Index action for this controller. Displays a list of blogs.
+	 * Displays a list of posts. If $tag is set only posts matching this tag are shown
 	 *
-	 * @return void
 	 */
 	public function indexAction() {
-		//$this->view->assign('blogs', $this->blogRepository->findAll());
+		/*echo "this is the indexaction";*/
+		echo "this is the indexaction get ready for shoutaction";
+
 	}
 	
 	/**
 	 * Creates a new Shout in the Database
 	 *
-	 * @param Tx_BlogExample_Domain_Model_Shout $shout A fresh Shout object which has not yet been added to the repository
-	 * @return void
 	 */
-	 public function addShout(){
+	 public function addshoutAction(){
 		 /**/
-		 $shout->addShout($shout);
+		 //$shout->addShout("hello");
+		 //Tx_CccoShoutbox_Domain_Model_Shout $shout
+		 echo "techno";
+	 }
+	 
+	 	/**
+	 * Creates a new Shout in the Database
+	 *
+	 */
+	 public function showAction(){
+		 /**/
+		 //$shout->addShout("hello");
+		 //Tx_CccoShoutbox_Domain_Model_Shout $shout
+		 echo "techno";
 	 }
 	 
 	 /**
@@ -84,16 +95,16 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	 public function getData(){
 		 /**/
-		 $db_host="localhost";
+		 /*$db_host="localhost";
 		 $db_user="tomi";
-		 $db_pass="tomi";
+		 $db_pass="tomi";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 		 $db_name="000_extbasextensions_org";
 		 $connect=@mysql_connect($db_host, $db_user, $db_pass) or die ("keine verbindung zum Datenbankserver!");
 		 $select_db=@mysql_select_db($db_name) or die ("Konnte die Datenbank <b> $db_name </b> nicht auswählen!");
 		 $name = $_POST['name'];
 		 $location = $_POST['location'];
 		 $sql = "INSERT INTO tx_ccco_shoutbox_domain_model_shout (uid, pid, name, shout, date) VALUES (NULL, '', '$name', '$location', '');";
-		 $rst = mysql_query($sql); 
+		 $rst = mysql_query($sql); */
 	 }
 
 	/**
