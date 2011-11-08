@@ -2,11 +2,10 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2009 Jochen Rau <jochen.rau@typoplanet.de>
- *  (c) 2011 Bastian Waidelich <bastian@typo3.org>
+ *  (c) 2011 Tom Bocek <info@pusilla.net>
  *  All rights reserved
  *
- *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  This script is my first extbase project. The extbase project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation; either version 2 of the License, or

@@ -1,5 +1,7 @@
+<h1><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h1>
 <f:form action="Shout" controller="Shout" enctype="multipart/form-data">
-<f:link.action action="show">action link</f:link.action>
+<f:link.action action="addshout">action link</f:link.action>
+<f:link.action action="addshout" controller="Shout" arguments="{shout : 1}">addshout</f:link.action>
 <div id="bx_shouts">
 </div>
 <f:form.textbox property="lastname" id="tx-ccco_shoutbox-name"></f:form.textbox><br />
@@ -8,80 +10,19 @@
 <div id="bn_shout">
 </div>
 <script type="text/javascript">
-
- 
-
 $(document).ready(function(){
 	$('#bn_shout').click(function(){
-    	$('#bx_shouts').text('List(s):');
-			//alert("hhhhh");
-			
-			
-			/*$.ajax({
-    			url: "index.php"
-    			data: "ccco_shoutbox_plugin[controller]=MyController&tx_myextension_plugin[action]=getData&type=89657201"
-				// tx_ccco_shoutbox_domain_model_shout
-    			success: function(result) {
-        		alert(result);
-    		}
-		});*/
-		
-		
-		/*$.ajax({
-    			url: "index.php",
-				cache: false,
-    			data: "tx_ccco_shoutbox_domain_model_shout[controller]=ShoutController&tx_ccco_shoutbox_domain_model_shout[action]=getData&type=89657201",
-				//data: "www.hodler.ch/judas",
-				// tx_ccco_shoutbox_domain_model_shout
-    			success: function(result) {
-        		alert(result);
-    		}
-		});*/
-		//$('#inp_date').val(formated);
-		/*var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
-		$.ajax({
-  			url: "test.php",
-			type: "POST",
-  			cache: false,
-		    data: dataString,
-  			success: function(html){
-    			//$("#results").append(html);
-				alert("bong");
-  		}
-		});*/
-		
-		
-		
+    	$('#bx_shouts').text('List(s):');		
 		var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
 		$.ajax({
   			url: "index.php",
   			cache: false,
 		    data: "tx_cccoshoutbox_pi1[controller]=ShoutController&tx_cccoshoutbox_pi1[action]=getData&type=89657201",
   			success: function(html){
-    			//$("#results").append(html);
 				alert("bong");
   		}
-		});
-		/*
-		$.post("test.php", { name: "John", time: "2pm" } );
-		$.ajax({
-  			url: "test.php",
-			type: "POST",
-  			cache: false,
-			data: "name="+$('#tx-ccco_shoutbox-name').val()+"&location="+$('#tx-ccco_shoutbox-shout').val(),
-  			success: function(html){
-    			//$("#results").append(html);
-				alert("bong");
-  		}
-		});
-		*/
-
-
-		
-		
-		
-	});
- 
+		});	
+	}); 
 })
 </script>
 </f:form>
