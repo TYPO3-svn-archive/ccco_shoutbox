@@ -31,38 +31,47 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 * @var Tx_CccoShoutbox_Domain_Repository_ShoutRepository
 	 */
 	protected $shoutRepository;
+	
+	/**
+	 * @return void
+	 */
+	public function initializeAction() {
+		$this->shoutRepository = t3lib_div::makeInstance('Tx_CccoShoutbox_Domain_Repository_ShoutRepository');
+	}
 		
 	/**
-+	 * Dependency injection of the Shout Repository
- 	 *
-	 * @param Tx_CccoShoutbox_Domain_Repository_ShoutRepository $shoutRepository
- 	 * @return void
--	 */
-	public function injectShoutRepository(Tx_CccoShoutbox_Domain_Repository_ShoutRepository $shoutRepository) {
-		$this->shoutRepository = $shoutRepository;
-	}
-
-	/**
-	 * Displays a list of posts. If $tag is set only posts matching this tag are shown
-	 *
+	 * Displays a list of shouts
+	 @return string The rendered view
 	 */
 	public function indexAction() {
 		//i serve the template with a var called shout
-		$this->view->assign('shout', 'shout');
+		$this->view->assign('shouts', $this->shoutRepository->findAll());
 		echo "this is the indexaction get ready for shoutaction why it doesn't";
 
 	}
-	
+
 	/**
+	 * Adds a new shout
+	 *
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout  
+	 * @return string
+	 * @dontvalidate $shout
+	 */
+	 public function addshoutAction(/*Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL*/){
+		 $this->view->assign('shout', $shout);	 
+	 	echo "we arrived in the ShoutController.php->addshout";
+	 }
+
+	 /**
 	 * Creates a new shout
 	 *
-	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout the shout 
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout  
 	 * @return void
 	 */
-	 public function addshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
-		 echo "techno";
-		 echo "schnaps";
-		 echo $shout;
+	 public function createshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
+	 	//$this->entryRepository->add($shout);
+		echo "we arrived in the ShoutController.php->createshout";
+		//$this->redirect('index');
 	 }
 }
 

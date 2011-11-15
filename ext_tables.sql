@@ -1,4 +1,4 @@
-CREATE TABLE tx_ccco_shoutbox_domain_model_shout (
+CREATE TABLE tx_cccoshoutbox_domain_model_shout (
 	 uid  INT( 11 ) NOT NULL AUTO_INCREMENT ,
 	 pid  INT( 11 ) NOT NULL ,
 	 
