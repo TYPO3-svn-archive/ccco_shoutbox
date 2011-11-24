@@ -70,14 +70,21 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 		return $this->shout;
 	}
 
+
+
+	/**
+	 * @param string $content
+	 * @return void
+	 */
 	/**
 	 * Setter for shout
 	 *
-	 * @param string $shout
+	 * @param string $content
 	 * @return void
 	 */
-	public function setShout($shout) {
-		$this->shout = $shout;
+	public function setShout($content) {
+		//$this->description = $content
+		$this->shout = $content;
 	}
 
 

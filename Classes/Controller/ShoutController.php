@@ -57,7 +57,7 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 * @return string
 	 * @dontvalidate $shout
 	 */
-	 public function addshoutAction(/*Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL*/){
+	 public function addshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL){
 		 $this->view->assign('shout', $shout);	 
 	 	echo "we arrived in the ShoutController.php->addshout";
 	 }
@@ -69,7 +69,7 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 * @return void
 	 */
 	 public function createshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
-	 	//$this->entryRepository->add($shout);
+	 	$this->shoutRepository->add($shout);
 		echo "we arrived in the ShoutController.php->createshout";
 		//$this->redirect('index');
 	 }

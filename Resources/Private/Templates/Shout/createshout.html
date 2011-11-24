@@ -6,9 +6,8 @@ createshout
 <f:link.action action="createshout" controller="Shout" arguments="{shout : 1}">createshout</f:link.action>
 <div id="bx_shouts">
 </div>
-<f:form.textfield property="lastname" id="tx-ccco_shoutbox-name"></f:form.textbox><br />
-<f:form.textfield property="lastname" id="tx-ccco_shoutbox-shout"></f:form.textbox>
-<!--<f:uri.action action="show" />-->
+<f:form.textfield property="name" name="name" /><br />
+<f:form.textarea rows="5" cols="30" property="shout" name="shout" />
 <div id="bn_shout">
 </div>
 

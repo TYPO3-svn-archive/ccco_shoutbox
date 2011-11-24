@@ -34,10 +34,10 @@ class Tx_CccoShoutbox_Domain_Validator_ShoutValidator extends Tx_Extbase_Validat
 	 * @return boolean TRUE if blog could be validated, otherwise FALSE
 	 */
 	public function isValid($shout) {
-		if (strtolower($shout->getTitle()) === 'extbase') {
+		/*if (strtolower($shout->getTitle()) === 'extbase') {
 			$this->addError(Tx_Extbase_Utility_Localization::translate('error.Blog.invalidTitle', 'CccoShoutbox'), 1297418974);
 			return FALSE;
-		}
+		}*/
 		return TRUE;
 	}
 
