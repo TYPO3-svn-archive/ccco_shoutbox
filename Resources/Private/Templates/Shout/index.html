@@ -13,23 +13,22 @@
 <f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
 <f:form.submit value="submit" name="submit" id="bn_shout"/>
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#shout").submit(function() {
-		alert("tomecco is just so right");
-		$('#bx_shouts').text('List(s):');	
-		//return false;
-    	//$('#bx_shouts').text('List(s):');		
-		//var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
-		$.ajax({
-  			url: "index.php",
-  			cache: false,
-		    data: "tx_cccoshoutbox_pi1[controller]=ShoutController&tx_cccoshoutbox_pi1[action]=createshout&type=89657201",
-  				success: function(html){
-				alert("bong");
-  			}
-		});	
+$(document).ready(function(){		
+		$("#shout").submit(function() {
+			alert("tomecco is just so right");
+			$.ajax({
+				type: "POST",
+  				url: "index.php",
+  				data: "tx_cccoshoutbox_plugin[controller]=Shout&tx_cccoshoutbox_plugin[action]=createshout&type=89657201",
+				success: function() {
+            		alert("success");
+				}
+			})
+		
 				return false;
-	}); 
+		});
+		
+
 })
 </script>
 </f:form>

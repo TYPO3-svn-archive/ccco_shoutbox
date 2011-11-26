@@ -20,5 +20,5 @@ lib.AJAXPrototype {
 AJAX_Plugintyp < lib.AJAXPrototype
 AJAX_Plugintyp {
     typeNum = 89657201
-    10 < tt_content.list.20.ccco_shoutbox
+    10 < tt_content.list.20.cccoshoutbox_pi1  
 }
