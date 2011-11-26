@@ -1,15 +1,13 @@
 <h1><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h1>
 addshout
-<f:form method="post" controller="Shout" action="createshout" name="shout" object="{shout}">
+<f:form method="post" action="createshout" name="shout" object="{shout}">
 <f:link.action action="index" noCacheHash="true" >home</f:link.action>
 <f:link.action action="addshout" controller="Shout" arguments="{shout : 1}">addshout</f:link.action>
 <f:link.action action="createshout" controller="Shout" arguments="{shout : 1}">createshout</f:link.action>
 <div id="bx_shouts">
 </div>
 <f:form.textfield property="name" name="name" /><br />
-<f:form.textarea rows="5" cols="30" property="shout" name="shout" />
-<div id="bn_shout">
-</div>
+<f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
 <f:form.submit value="submit" />
 </f:form>
 

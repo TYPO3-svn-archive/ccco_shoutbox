@@ -1,7 +1,7 @@
 <h1><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h1>
-<f:form action="Shout" controller="Shout" enctype="multipart/form-data">
+<f:form method="post" action="createshout" name="shout" object="{shout}" id="shout">
 <f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
-<f:link.action action="addshout" controller="Shout" arguments="{shout : 1}">addshout</f:link.action>
+<f:link.action action="addshout">addshout</f:link.action>
 <div id="bx_shouts">
 <ul>
 <f:for each="{shouts}" as="shout">
@@ -10,23 +10,25 @@
 </ul>
 </div>
 <f:form.textfield property="name" name="name" /><br />
-<f:form.textarea rows="5" cols="30" property="shout" name="shout" />
-
-<div id="bn_shout">
-</div>
+<f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
+<f:form.submit value="submit" name="submit" id="bn_shout"/>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#bn_shout').click(function(){
-    	$('#bx_shouts').text('List(s):');		
-		var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
+	$("#shout").submit(function() {
+		alert("tomecco is just so right");
+		$('#bx_shouts').text('List(s):');	
+		//return false;
+    	//$('#bx_shouts').text('List(s):');		
+		//var dataString = 'name='+ $('#tx-ccco_shoutbox-name').val() + '&location=' + $('#tx-ccco_shoutbox-shout').val();
 		$.ajax({
   			url: "index.php",
   			cache: false,
-		    data: "tx_cccoshoutbox_pi1[controller]=ShoutController&tx_cccoshoutbox_pi1[action]=getData&type=89657201",
-  			success: function(html){
+		    data: "tx_cccoshoutbox_pi1[controller]=ShoutController&tx_cccoshoutbox_pi1[action]=createshout&type=89657201",
+  				success: function(html){
 				alert("bong");
-  		}
+  			}
 		});	
+				return false;
 	}); 
 })
 </script>
