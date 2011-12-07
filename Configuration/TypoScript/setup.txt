@@ -7,8 +7,8 @@ lib.AJAXPrototype {
         disableAllHeaderCode = 1
         xhtml_cleaning = 0
         admPanel = 0
-            debug = 0
-            no_cache = 1
+        debug = 0
+        no_cache = 1
         additionalHeaders = Content-type:application/json
     }
 }
@@ -19,6 +19,26 @@ lib.AJAXPrototype {
 #
 AJAX_Plugintyp < lib.AJAXPrototype
 AJAX_Plugintyp {
-    typeNum = 89657201
+    typeNum = 8965720999
     10 < tt_content.list.20.cccoshoutbox_pi1  
+}
+
+
+ajaxshoutbox = PAGE
+ajaxshoutbox {
+  typeNum = 19999
+  10 < tt_content.list.20.cccoshoutbox_pi1
+ 
+  config {
+   disableAllHeaderCode = 1
+   additionalHeaders = Content-type:application/json
+   xhtml_cleaning = 0
+   admPanel = 0
+  }
+}
+
+plugin.tx_cccoshoutbox {
+  persistence {
+    storagePid = 4
+  }
 }

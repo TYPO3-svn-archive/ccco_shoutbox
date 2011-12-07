@@ -13,13 +13,29 @@
 <f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
 <f:form.submit value="submit" name="submit" id="bn_shout"/>
 <script type="text/javascript">
-$(document).ready(function(){		
+$(document).ready(function(){	
+		var uri = '<f:uri.action action="createshoutajax" controller="Shout" pageType="19999" />';	
+		var form = $("#shout");
+		$("#shout").submit(function() {
+			console.log("uri = "+ uri + "end");
+			$.ajax({
+				type: "POST",
+  				url: uri,
+  				data: "tx_cccoshoutbox_pi1[shout][shout]=daniel",
+				success: function() {
+            		console.log("ajaxrequest suceed");
+				}
+			})
+		
+				return false;
+		});
+		/*var uri = '<f:uri.action action="targetLanguages" controller="Order" pageType="1249058992" />';
 		$("#shout").submit(function() {
 			alert("tomecco is just so right");
 			$.ajax({
 				type: "POST",
-  				url: "index.php",
-  				data: "tx_cccoshoutbox_plugin[controller]=Shout&tx_cccoshoutbox_plugin[action]=createshout&type=89657201",
+  				url: "some.php",
+  				data: "name=John&shout=shoutmessage&date=20112011",
 				success: function() {
             		alert("success");
 				}
@@ -28,7 +44,48 @@ $(document).ready(function(){
 				return false;
 		});
 		
+		
+		$(document).ready(function(){
+	$("#shout").submit(function() {
+		alert("tomecco is just so right");
+		$.ajax({
+  			type: "POST",
+  			url: "some.php",
+  			data: "name=John&shout=shoutmessage&date=20112011",
+			success: function() {
+            	alert("success");
+			}
+		})
+		
+				return false;
+	}); 
+})
+*/
+})
 
+</script>
+
+
+
+</f:form>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	/*var uri = '<f:uri.action action="targetLanguages" controller="Start" pageType="1249058992" />';
+	var uri = '<f:uri.action action="ajax" controller="Shout" pageType="19999" />';
+	 
+	jQuery.getJSON(uri, function(data) {
+		// Rückgabe verarbeiten
+		var items = [];
+	
+					$.each(data, function(key, val) {
+						items.push('<li id="' + key + '">' + val + '</li>');
+					});
+					$('#list').append('<ul>'+items+'</ul>');
+	
+	});*/
 })
 </script>
-</f:form>
+

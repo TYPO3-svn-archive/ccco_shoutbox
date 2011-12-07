@@ -4,10 +4,10 @@ Tx_Extbase_Utility_Extension::configurePlugin(
     $_EXTKEY,
     'Pi1',
     array(
-         'Shout' => 'index, ajax, addshout, createshout',
+         'Shout' => 'index, ajax, addshout, createshout, createshoutajax',
     ),
     array(
-         'Shout' => 'index, ajax, addshout, createshout',
+         'Shout' => 'index, ajax, addshout, createshout, createshoutajax',
     )
 );
 ?>
