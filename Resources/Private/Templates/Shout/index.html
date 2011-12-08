@@ -5,7 +5,7 @@
 <div id="bx_shouts">
 <ul>
 <f:for each="{shouts}" as="oneshout">
-	<li><strong>{oneshout.name}</strong>({oneshout.shout})</li>
+	<li><strong>{oneshout.name}</strong>(<f:format.date format="d.m.Y">{oneshout.date}</f:format.date>)</li>
 </f:for>
 </ul>
 </div>

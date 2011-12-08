@@ -38,12 +38,12 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 	protected $shout;
 
 	/**
-	 * @var string
+	 * @var DateTime
 	 */
 	protected $date;
 
 	public function __construct() {
-		/*nothing at the moment;*/
+		$this->date = new DateTime();
 	}
 	
 	/**
@@ -85,6 +85,21 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 	public function setShout($content) {
 		//$this->description = $content
 		$this->shout = $content;
+	}
+	
+	/**
+	 * @param DateTime $date
+	 * @return void
+	 */
+	public function setDate(DateTime $date) {
+		$this->date = $date;
+	}
+
+	/**
+	 * @return DateTime
+	 */
+	public function getDate() {
+		return $this->date;
 	}
 
 
