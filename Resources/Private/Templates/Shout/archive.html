@@ -3,7 +3,6 @@
 <f:link.action action="addshout">addshout</f:link.action>
 <f:link.action action="archive" controller="Shout" arguments="{shout : 1}">home</f:link.action>
 <div>
-
 <f:widget.paginate objects="{shouts}" as="paginatedoneshout" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 1}">
   <f:for each="{paginatedoneshout}" as="oneshout">
     <strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
