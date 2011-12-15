@@ -50,8 +50,6 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 		//i serve the template with a var called shout
 		$this->view->assign('shouts', $this->shoutRepository->findAll());
 		$this->view->assign('shout', $shout);
-		echo "this is the indexaction get ready for shoutaction why it doesn't";
-
 	}
 
 	/**
@@ -63,7 +61,6 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	 public function addshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL){
 		 $this->view->assign('shout', $shout);	 
-	 	echo "we arrived in the ShoutController.php->addshout";
 	 }
 
 	 /**
@@ -74,8 +71,6 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	 public function createshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
 	 	$this->shoutRepository->add($shout);
-		echo "we arrived in the ShoutController.php->createshout";
-		//$this->redirect('index');
 	 }
 	 
 	 /**
@@ -86,43 +81,27 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	 public function createshoutajaxAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
 	 	$this->shoutRepository->add($shout);
-		//echo tx_cccoshoutbox_pi1[shout][name];
-		//echo Tx_CccoShoutbox_Domain_Model_Shout $shout;
-		//echo "we arrived in the ShoutController.php->createshout";
-		//$this->view->assign('shouts', $this->shoutRepository->findAll());
-		//$this->redirect('index');
-		//$shouts = $this->shoutRepository->findAll();
-		//echo $shouts;
-		//echo $this->shoutRepository->findAll();
-		
-		for($i = 0; $i < 5; $i++){
-			$stringshout .= "hjh";	
-		}
-		//echo $stringshout;
-		//echo $stringshout;
-		//return
+		$tempdate = $shout->getDate();
 		return json_encode(
 			array(
-      			'myshout'  => $shout->getShout(),
-      			'newId'   => 'fgsdf',
-      			'country' => 'fdgsdfg'
+      			'name'  => $shout->getName(),
+				'date' => $shout->getDate(),
+      			'shout'   => $shout->getShout(),
     		)
 		);
-		
 	 }
 	 
-	 /**
-     * @return void
-     */
-	public function ajaxAction() {
-        $json = array(
-            'jQuery',
-            'ExtJS',
-            'Prototype',
-            'MooTools'
-        );
-
-       return json_encode($json);
+	/**
+	 * Displays a list of shouts
+	 * @return string The rendered view
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout  
+	 * @return string
+	 * @dontvalidate $shout
+	 */
+	public function archiveAction() {
+		//i serve the template with a var called shout
+		$this->view->assign('shouts', $this->shoutRepository->findAll());
+		//$this->view->assign('shout', $shout);
 	}
 	 
 }

@@ -41,7 +41,12 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 	 * @var DateTime
 	 */
 	protected $date;
-
+	
+	/**
+	* @var string
+	*/
+	protected $unixdate;
+	
 	public function __construct() {
 		$this->date = new DateTime();
 	}
@@ -70,12 +75,6 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 		return $this->shout;
 	}
 
-
-
-	/**
-	 * @param string $content
-	 * @return void
-	 */
 	/**
 	 * Setter for shout
 	 *
@@ -99,8 +98,18 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 	 * @return DateTime
 	 */
 	public function getDate() {
-		return $this->date;
+		$tempdate = $this->date;
+		//$tempdate->format('d-m-Y H:i'),
+		return $tempdate->format('d-m-Y H:i');
 	}
+	
+	/**
+	 * @return string
+	 */
+	public function getUnixDate() {		
+		return $this->$unixdate;		
+	}
+
 
 
 

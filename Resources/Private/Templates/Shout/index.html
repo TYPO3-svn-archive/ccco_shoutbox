@@ -2,111 +2,46 @@
 <f:form method="post" action="createshout" name="shout" object="{shout}" id="shout">
 <f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
 <f:link.action action="addshout">addshout</f:link.action>
+<f:link.action action="archive" controller="Shout" arguments="{shout : 1}">archive</f:link.action>
 <div id="bx_shouts">
-<ul>
+<ul id="ul_shouts">
 <f:for each="{shouts}" as="oneshout">
-	<li><strong>{oneshout.name}</strong>(<f:format.date format="d.m.Y">{oneshout.date}</f:format.date>)</li>
+	<li>
+		<strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
+		{oneshout.shout}
+	</li>
 </f:for>
 </ul>
 </div>
+<section>
+	<a href="#">archive</a>
+</section>
 <f:form.textfield property="name" name="name" /><br />
 <f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
 <f:form.submit value="submit" name="submit" id="bn_shout"/>
 <script type="text/javascript">
-$(document).ready(function(){	
+	$(document).ready(function(){	
 		var uri = '<f:uri.action action="createshoutajax" controller="Shout" pageType="19999" />';	
 		var form = $("#shout");
 		$("#shout").submit(function() {
 			console.log("uri = "+ uri + "end");
 			$.ajax({
 				type: "POST",
-  				url: uri,
-  				data: form.serialize(),
+				url: uri,
+				data: form.serialize(),
 				success: function(data) {
-            		console.log("ajaxrequest suceed");
+					console.log("ajaxrequest suceed");
 					console.log(data);
-					//var obj = jQuery.parseJSON('{"name":"John"}');
-					//alert( obj.name );
 					var items = [];
 					$.each(data, function(key, val) {
-						items.push('<li id="' + key + '">' + val + '</li>');
+						string = "<li><strong>"+data.name+"</strong> "+"("+data.date+")"+"<br/>"+data.shout+"</li>";
 					});
-					$('#bx_shouts').prepend('<ul>'+items+'</ul>');
+					console.log(items.join(''));
+					$('#ul_shouts').prepend(string);					
 				}
 			})
-		
 				return false;
 		});
-		/*var uri = '<f:uri.action action="targetLanguages" controller="Order" pageType="1249058992" />';
-		$("#shout").submit(function() {
-			alert("tomecco is just so right");
-			$.ajax({
-				type: "POST",
-  				url: "some.php",
-  				data: "name=John&shout=shoutmessage&date=20112011",
-				success: function() {
-            		alert("success");
-				}
-			})
-		
-				return false;
-		});
-		
-		
-		$(document).ready(function(){
-	$("#shout").submit(function() {
-		alert("tomecco is just so right");
-		$.ajax({
-  			type: "POST",
-  			url: "some.php",
-  			data: "name=John&shout=shoutmessage&date=20112011",
-			success: function() {
-            	alert("success");
-			}
-		})
-		
-				return false;
-	}); 
-})
-*/
-})
-
+	})
 </script>
-
-
-
 </f:form>
-
-
-
-<script type="text/javascript">
-$(document).ready(function(){
-	/*var uri = '<f:uri.action action="targetLanguages" controller="Start" pageType="1249058992" />';
-	var uri = '<f:uri.action action="ajax" controller="Shout" pageType="19999" />';
-	 
-	jQuery.getJSON(uri, function(data) {
-		// Rückgabe verarbeiten
-		var items = [];
-	
-					$.each(data, function(key, val) {
-						items.push('<li id="' + key + '">' + val + '</li>');
-					});
-					$('#list').append('<ul>'+items+'</ul>');
-	
-	});*/
-	var jsonstring = "{'tom','bocek','is'}";
-	$('#button').click(function(){
-		//return = void;
-		var jstringitem = [];
-					$.each(jstringitem, function(key, val) {
-						jstringitem.push('<li id="' + key + '">' + val + '</li>');
-					});
-					$('#bx_shouts').append('<ul>'+jstringitem+'</ul>');
-		alert(jsonstring);
-	});
-	
-
-	
-})
-</script>
-<a href="javascript:void(0)" id="button" >klick</a>
