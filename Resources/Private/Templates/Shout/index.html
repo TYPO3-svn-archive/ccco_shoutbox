@@ -14,7 +14,25 @@
 </ul>
 </div>
 <section>
-	<a href="#">archive</a>
+
+<a href="#">archive</a>
+<p><a href="ajaxContentDOMWindow.html" class="fixedAjaxDOMWindow">Open DOM Window</a></p> 
+<script type="text/javascript"> 
+$('.fixedAjaxDOMWindow').openDOMWindow({ 
+	height:200, 
+	width:200, 
+	positionType:'fixed', 
+	positionTop:300, 
+	positionLeft:300, 
+	eventType:'click', 
+	loader:1, 
+	loaderImagePath:'animationProcessing.gif', 
+	loaderHeight:16, 
+	loaderWidth:17, 
+	windowSource:'ajax', 
+	windowHTTPType:'post' 
+}); 
+</script>
 </section>
 <f:form.textfield property="name" name="name" /><br />
 <f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
