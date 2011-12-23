@@ -8,3 +8,4 @@ CREATE TABLE tx_cccoshoutbox_domain_model_shout (
 	 
 	PRIMARY KEY ( `uid` )
 ) ENGINE = MYISAM ;
+###
