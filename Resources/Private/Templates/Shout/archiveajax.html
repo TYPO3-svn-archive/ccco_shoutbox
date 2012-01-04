@@ -1,0 +1,43 @@
+<f:widget.paginate objects="{shouts}" as="paginatedoneshout" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 1}">
+  <f:for each="{paginatedoneshout}" as="oneshout">
+    <strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
+{oneshout.shout}<br />
+ </f:for>
+</f:widget.paginate>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		//var uri = '<f:uri.action action="createshoutajax" controller="Shout" pageType="19999" />';	
+		//var form = $("#shout");
+		$('.f3-widget-paginator').find('a').click(function() {
+			console.log("this is like an alert");
+			console.log($(this).attr("href"));
+			//return false;
+			uri = $(this).attr("href");
+			$.ajax({
+				type: "POST",
+				url: uri,
+				data: 'ggg=hjjhj'
+			}).done(function( msg ) {
+				alert( "Data Saved: " + msg );
+			});
+			
+				
+				
+			/*$.ajax({
+				type: "POST",
+		  		url: "some.php",
+		  		data: "name=John&location=Boston"
+			}).done(function( msg ) {
+				alert( "Data Saved: " + msg );
+			});*/
+				
+			return false;	
+				
+				
+		});
+		
+		
+		
+		
+	})
+</script>

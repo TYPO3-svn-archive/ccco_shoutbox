@@ -5,6 +5,7 @@
 	height: 100px;
 	background-color: green;
 	border: 1px solid red;
+	background-color: #C06;
 }
 #bn_shout{
 	width: 100px;
@@ -17,6 +18,7 @@
 	height: 100px;
 	background-color: #99F;
 	border: 1px solid red;
+	overflow: hidden;
 }
 #tx-ccco_shoutbox-name{
 	margin: 10px 0px 0px 0px;

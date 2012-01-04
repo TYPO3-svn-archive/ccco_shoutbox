@@ -14,24 +14,28 @@
 </ul>
 </div>
 <section>
-
-<a href="#">archive</a>
-<p><a href="ajaxContentDOMWindow.html" class="fixedAjaxDOMWindow">Open DOM Window</a></p> 
-<script type="text/javascript"> 
+<a href="#" class="fixedAjaxDOMWindow">this is a testlink for urls with parameter</a>
+<f:link.action action="archiveajax" controller="Shout" pageType="19999" class="fixedAjaxDOMWindow">action link</f:link.action>
+<script type="text/javascript">
+<![CDATA[
+var loaderimg = ']]>{f:uri.resource(path: 'Icons/loader.gif', absolute: 1)}<![CDATA[';
 $('.fixedAjaxDOMWindow').openDOMWindow({ 
 	height:200, 
-	width:200, 
+	width:400, 
 	positionType:'fixed', 
 	positionTop:300, 
 	positionLeft:300, 
 	eventType:'click', 
 	loader:1, 
-	loaderImagePath:'animationProcessing.gif', 
+	loaderImagePath:loaderimg, 
 	loaderHeight:16, 
 	loaderWidth:17, 
 	windowSource:'ajax', 
-	windowHTTPType:'post' 
-}); 
+	windowHTTPType:'get', 
+	modal: 0,
+	windowSourceAttrURL:'href'
+});
+//]]>
 </script>
 </section>
 <f:form.textfield property="name" name="name" /><br />

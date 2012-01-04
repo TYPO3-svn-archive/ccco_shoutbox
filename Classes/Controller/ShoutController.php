@@ -103,6 +103,20 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 		$this->view->assign('shouts', $this->shoutRepository->findAll());
 		//$this->view->assign('shout', $shout);
 	}
+	
+	/**
+	 * Displays a list of shouts
+	 * @return string The rendered view
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout  
+	 * @return string
+	 * @dontvalidate $shout
+	 */
+	public function archiveajaxAction() {
+		//i serve the template with a var called shout
+		//return "hello";
+		$this->view->assign('shouts', $this->shoutRepository->findAll());
+		//$this->view->assign('shout', $shout);
+	}
 	 
 }
 

@@ -5,7 +5,7 @@ if (!defined ('TYPO3_MODE')) die ('Access denied.');
 Tx_Extbase_Utility_Extension::registerPlugin($_EXTKEY,'Pi1','ccco Shoutbox');
 // the folowing line adds a typoscriptfile to the static templatelist
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', $_EXTKEY);
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/DefaultStyles', 'Ccco_shoutbox');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/DefaultStyles', 'ccco_shoutbox css-file');
 
 ///tx_cccoshoutbox_domain_model_shout
 $TCA['tx_cccoshoutbox_domain_model_shout'] = array (

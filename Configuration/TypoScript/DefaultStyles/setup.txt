@@ -1,2 +1,2 @@
  # Include BlogExample default styles
-page.includeCSS.tx_ccco_shoutbox = EXT:ccco_shoutbox/Resources/Public/Css/ccco_shoutbox.css
+page.includeCSS.tx_cccoshoutbox = EXT:ccco_shoutbox/Resources/Public/Css/ccco_shoutbox.css
