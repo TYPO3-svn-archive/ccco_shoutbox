@@ -16,9 +16,11 @@
 <section>
 <a href="#" class="fixedAjaxDOMWindow">this is a testlink for urls with parameter</a>
 <f:link.action action="archiveajax" controller="Shout" pageType="19999" class="fixedAjaxDOMWindow">action link</f:link.action>
+<f:image src="{f:uri.resource(path:'Icons/loader.gif')}" alt="My Image" id="loaderimage"/>
 <script type="text/javascript">
-<![CDATA[
-var loaderimg = ']]>{f:uri.resource(path: 'Icons/loader.gif', absolute: 1)}<![CDATA[';
+/* <![CDATA[ */
+var loaderimg = $('#loaderimage').attr('src');
+console.log(loaderimg);
 $('.fixedAjaxDOMWindow').openDOMWindow({ 
 	height:200, 
 	width:400, 
@@ -35,7 +37,7 @@ $('.fixedAjaxDOMWindow').openDOMWindow({
 	modal: 0,
 	windowSourceAttrURL:'href'
 });
-//]]>
+/* ]]> */
 </script>
 </section>
 <f:form.textfield property="name" name="name" /><br />

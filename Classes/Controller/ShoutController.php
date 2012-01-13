@@ -119,5 +119,4 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	}
 	 
 }
-
 ?>

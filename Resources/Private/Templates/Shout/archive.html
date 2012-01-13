@@ -1,3 +1,15 @@
+  <div id="demo4">
+      <div class="action">&nbsp;</div>
+    <div class="scrollbar noborder">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur.</p>
+
+  <f:for each="{paginatedoneshout}" as="oneshout">
+    <strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
+{oneshout.shout}<br />
+ </f:for>
+     </div>
+    </div>
 <h1><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h1>
 <f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
 <f:link.action action="addshout">addshout</f:link.action>
@@ -9,5 +21,5 @@
 {oneshout.shout}<br />
  </f:for>
 </f:widget.paginate>
-</div>
+
 
