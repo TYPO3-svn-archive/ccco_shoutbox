@@ -1,8 +1,7 @@
-<h1><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h1>
+
+<div id="crcccosb">
+<h3><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h3>
 <f:form method="post" action="createshout" name="shout" object="{shout}" id="shout">
-<f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
-<f:link.action action="addshout">addshout</f:link.action>
-<f:link.action action="archive" controller="Shout" arguments="{shout : 1}">archive</f:link.action>
 <div id="bx_shouts">
 <ul id="ul_shouts">
 <f:for each="{shouts}" as="oneshout">
@@ -15,7 +14,7 @@
 </div>
 <section>
 <a href="#" class="fixedAjaxDOMWindow">this is a testlink for urls with parameter</a>
-<f:link.action action="archiveajax" controller="Shout" pageType="19999" class="fixedAjaxDOMWindow">action link</f:link.action>
+<f:link.action action="domwdw" controller="Shout" pageType="19999" class="fixedAjaxDOMWindow">action link</f:link.action>
 <f:image src="{f:uri.resource(path:'Icons/loader.gif')}" alt="My Image" id="loaderimage"/>
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -69,3 +68,7 @@ $('.fixedAjaxDOMWindow').openDOMWindow({
 	})
 </script>
 </f:form>
+<f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
+<f:link.action action="addshout">addshout</f:link.action>
+<f:link.action action="archive" controller="Shout" arguments="{shout : 1}">archive</f:link.action>
+</div>

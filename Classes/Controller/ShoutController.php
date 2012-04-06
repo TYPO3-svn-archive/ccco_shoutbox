@@ -117,6 +117,22 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 		$this->view->assign('shouts', $this->shoutRepository->findAll());
 		//$this->view->assign('shout', $shout);
 	}
+	
+	/**
+	 * Displays a archivelist of shouts
+	 * @return string The rendered view
+	 */
+	public function arcvajxAction() {
+		$this->view->assign('shouts', $this->shoutRepository->findAll());
+	}
+	
+	/**
+	 * Displays a the domwindow where arcveajdta will be loaded
+	 * @return string The rendered view
+	 */
+	public function domwdwAction() {
+		$this->view->assign('shouts', $this->shoutRepository->findAll());
+	}
 	 
 }
 ?>

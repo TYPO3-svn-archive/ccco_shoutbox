@@ -1,32 +1,12 @@
 
 
 
-    <style type="text/css" media="screen">
-      /* demo styles */
 
-      #demo4{float:left;}
-      .action{margin: 0px 0 10px 0;}
-      a{color:#F44;text-decoration:none;}
-      a:hover{text-decoration:underline;}
-      .scrollbar{width:250px;height:100px;margin:0 60px 0 0;-moz-box-shadow:0px 0px 12px 3px #CCC;overflow:hidden;float:left;background:#FFF;border:6px solid #B2B2B2;}
-      .scrollbar.simple{width:250px;height:200px;margin:0 60px 0 0;overflow:hidden;float:left;background:#EEE;-moz-box-shadow:none;border:none;}
-      .scrollbar.noborder{border:none;}
-      .scrollbar p{margin:0;padding:8px;line-height:1.4;}
-    </style>
 
 
 <div id="archiveajaxmain">
-<f:widget.paginate objects="{shouts}" as="paginatedoneshout" configuration="{itemsPerPage: 5, insertAbove: 1, insertBelow: 0}">
-    <div id="demo4">
-      <div class="action">&nbsp;</div>
-    <div class="scrollbar noborder">
-	 <f:for each="{paginatedoneshout}" as="oneshout">
-    <strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
-{oneshout.shout}<br />
- </f:for>
-       </div>
-    </div>
-</f:widget.paginate>
+
+
 
 <script type="text/javascript">
 $(document).ready(function(){	
@@ -45,7 +25,7 @@ $(document).ready(function(){
 		});				
 		return false;					
 	});	
-	$('.scrollbar').scrollbar();	
+	$('.scrollbar').scrollbar();		
 })
 </script>
 </div>

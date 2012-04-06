@@ -1,0 +1,57 @@
+<div id="archiveajaxmain">
+empty
+
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log($("#archiveajaxmain").text());
+	var content = $("#archiveajaxmain").text();
+	console.log(content);
+	if($("#archiveajaxmain").text()==content){	
+		console.log("we loaded this content the first time");
+		uri = '<f:uri.action action="arcvajx" controller="Shout" pageType="19999" />';
+		//$.get(uri, functionsname);
+		/*$.get(uri, function(data){
+    		console.log(data);
+  		});*/
+		
+		/*console.log(uri);
+		$.get(uri, function(data) {
+  			//$('.result').html(data);
+  			alert('hey i am here');
+		});*/
+		
+		
+		
+      		//$('#testdiv').html("initial");
+			$.get(uri);
+      		
+   		
+		
+		
+
+		
+		
+
+		
+	}
+	console.log("until here there is no error");
+		$('.f3-widget-paginator').find('a').click(function() {
+			uri = $(this).attr("href");
+			$.ajax({
+				url: uri,
+				cache: false,
+				dataType: 'html',
+				error: function (xhr, status) {
+					alert(status);
+				},
+				success: function(html){
+					$('#archiveajaxmain').replaceWith(html);
+				}
+			});				
+			return false;					
+		});	
+		$('.scrollbar').scrollbar();	
+
+})
+</script>
+</div>
