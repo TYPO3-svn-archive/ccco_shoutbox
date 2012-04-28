@@ -1,12 +1,21 @@
 <?php
 /***************************************************************
- *  Copyright notice
+ *  Copyright notice                                                                                                 
+ *      .                                                                                              
+ *  .MMMM    .   ...                                                                                   
+ *  .MMMM.. ZM.  ZM.                                                                                   
+ *   .MM8 =7MMM=, D       . ... ..  .  .... .... ..   ..    ..       ..  .  .     .  ..                
+ *       MMMMMMMM. .     .M M   M  M  . .?. M  ...    M     .M.      ,M  8   N M  M M ,                
+ *    .?MMMMMM+MMMM.     .M.M  +.. .  MM..  M.  M     M    .M?.      D ?.   Z M    7.                  
+ *     :MMMM+MMMMMM.     Z    .M..Z. .  M   :.. M   . . .  M..7      ..OM   M. M   M.                  
+ *        MMMMMMM M~                                                                                    
+ *     ,M  +MM.7M.                                                                                     
+ *      ?M   7M.   
+ *      2012 copyright by pusilla.net // tomeccco <info@pusilla.net>  
+ *      All rights reserved  
  *
- *  (c) 2011 Tom Bocek <info@pusilla.net>
- *  All rights reserved
- *
- *  This script is my first extbase project. The extbase project is
- *  free software; you can redistribute it and/or modify
+ *  This script is my first extbase project. 
+ *  It's free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
@@ -26,6 +35,7 @@
  * A repository for shouts
  */
 class Tx_CccoShoutbox_Domain_Repository_ShoutRepository extends Tx_Extbase_Persistence_Repository {	
+
 	/**
 	* Find amount of shouts 
 	* @param number $limit limit
@@ -38,5 +48,6 @@ class Tx_CccoShoutbox_Domain_Repository_ShoutRepository extends Tx_Extbase_Persi
 		$result = $query->execute();				
 		return $result;
 	}
+	
 }
 ?>

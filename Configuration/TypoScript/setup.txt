@@ -18,12 +18,3 @@ plugin.tx_cccoshoutbox {
 }
 
 
-lib.cccoshoutboxteaser = USER
-lib.cccoshoutboxteaser {
-	userFunc = tx_extbase_core_bootstrap->run
-	extensionName = Tx_cccoshoutbox
-	pluginName = Pi1
-	settings =< plugin.tx_cccoshoutbox.settings
-	persistence =< plugin.tx_cccoshoutbox.persistence
-	view =< plugin.tx_cccoshoutbox.view
-}

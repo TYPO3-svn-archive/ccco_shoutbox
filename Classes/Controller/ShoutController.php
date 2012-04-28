@@ -98,7 +98,7 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	*/
 	public function createshoutajxAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
 		$this->shoutRepository->add($shout);
-		$this->forward('readshoutajax');
+		$this->forward('readshoutajx');
 	}
 	 
 	/**

@@ -1,4 +1,5 @@
 <?php
+
 /***************************************************************
  *  Copyright notice
  *
@@ -29,7 +30,7 @@
  *
  * @package    Typo3
  *
- * @author     Armin RÃ¼diger Vieweg <info@professorweb.de>
+ * @author     Armin Ruediger Vieweg <info@professorweb.de>
  * @author     Benjamin Schulte <benjamin.schulte@diemedialen.de>
  * @license    http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
