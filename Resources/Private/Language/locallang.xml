@@ -6,14 +6,14 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="back">back</label>
-			<label index="cancel">cancel</label>
-			<label index="submit">submit</label>
-			<label index="logInToCreateBlogs">Log in with a FE user that belongs to group #%d (configurable) in order to add/modify blogs and posts in FE mode!</label>
-			<label index="publishedOn">published on</label>
+			<label index="shout.ttlcccoshoutbox">ccco_shoutbox</label>
+			<label index="shout.ttlarchive">Archive</label>
+			<label index="shout.errmssge.nme">Enter valid name</label>
+			<label index="shout.errmssge.shout">enter valid shout</label>
+			<label index="shout.error.name">Enter valid name</label>
+			<label index="shout.error.shout">Enter valid shout</label>
 			<label index="by">by</label>
 			<label index="postedOn">posted on</label>
-			<label index="shout.header">ccco_shoutbox</label>
 			<label index="blog.introduction">This extension serves as a demonstration for basic development techniques used in Extbase/FLOW3 applications.</label>
 			<label index="post.header">Welcome to the Blog &quot;%s&quot;</label>
 			<label index="post.introductionAdministrator">If you have any questions, feel free to contact the administrator &lt;a href="%s"&gt;%s&lt;/a&gt;.</label>
@@ -27,16 +27,25 @@
 			<label index="culture.date.formatShort">Y-m-d</label>
 			<label index="error.errorsOccurred">Following errors occurred</label>
 			<label index="error.Blog.updateAction">Could not update blog</label>
+			
+			<label index="tx_pwteaser_domain_model_teaser">the teaser model</label>
+			<label index="tx_pwteaser_domain_model_teaser.name">name</label>
+			<label index="tx_pwteaser_domain_model_teaser.teaser_that">teaserThat</label>
+			<label index="tx_pwteaser_domain_model_teaser.order_by">orderBy</label>
+
+			<label index="pagination_first">&#171;</label>
+			<label index="pagination_previous">&lt;</label>
+			<label index="pagination_next">&gt;</label>
+			<label index="pagination_last">&#187;</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="back">Zurück</label>
-			<label index="cancel">Abbrechen</label>
-			<label index="submit">Abschicken</label>
-			<label index="logInToCreateBlogs">Melden Sie sich mit einem Websitenbenutzer aus der Benutzergruppe #%d (konfigurierbar) ein, um Blogs und Beiträge im FE Modus hinzuzufügen/zu editieren!</label>
-			<label index="publishedOn">veröffentlicht am</label>
+			<label index="shout.ttlcccoshoutbox">ccco_shoutbox</label>
+			<label index="shout.errmssge">ungültiger name</label>
+			<label index="shout.errmssge.shout">ungültige nachricht</label>
+			<label index="shout.nameerror.1238108067">Enter valid name</label>
+			<label index="shout.shouterror.1238108067">Enter valid shout</label>
 			<label index="by">von</label>
 			<label index="postedOn">verfasst am</label>
-			<label index="shout.header">ccco_shoutbox</label>
 			<label index="blog.introduction">Diese Extension soll einen Einblick in die Technik von Extbase/FLOW3 Applikationen bieten.</label>
 			<label index="post.header">Willkommen zum Blog &quot;%s&quot;</label>
 			<label index="post.introductionAdministrator">Wenn Sie Fragen haben, wenden Sie sich an den Administrator &lt;a href="%s"&gt;%s&lt;/a&gt;.</label>
@@ -50,6 +59,16 @@
 			<label index="culture.date.formatShort">d.m.Y</label>
 			<label index="error.errorsOccurred">Es sind Fehler aufgetreten</label>
 			<label index="error.Blog.updateAction">Das Blog konnte nicht aktualisiert werden</label>
+			
+			<label index="tx_pwteaser_domain_model_teaser">the teaser model</label>
+			<label index="tx_pwteaser_domain_model_teaser.name">name</label>
+			<label index="tx_pwteaser_domain_model_teaser.teaser_that">teaserThat</label>
+			<label index="tx_pwteaser_domain_model_teaser.order_by">orderBy</label>
+
+			<label index="pagination_first">&#171;</label>
+			<label index="pagination_previous">&lt;</label>
+			<label index="pagination_next">&gt;</label>
+			<label index="pagination_last">&#187;</label>
 		</languageKey>
 	</data>
 </T3locallang>

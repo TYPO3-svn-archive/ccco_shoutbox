@@ -1,74 +1,119 @@
-
+{namespace shout=Tx_CccoShoutbox_ViewHelpers}
 <div id="crcccosb">
-<h3><f:translate key="shout.header">this is just a empty marker (tomeccco)</f:translate></h3>
-<f:form method="post" action="createshout" name="shout" object="{shout}" id="shout">
-<div id="bx_shouts">
-<ul id="ul_shouts">
-<f:for each="{shouts}" as="oneshout">
-	<li>
-		<strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
-		{oneshout.shout}
-	</li>
-</f:for>
-</ul>
-</div>
-<section>
-<a href="#" class="fixedAjaxDOMWindow">this is a testlink for urls with parameter</a>
-<f:link.action action="domwdw" controller="Shout" pageType="19999" class="fixedAjaxDOMWindow">action link</f:link.action>
-<f:image src="{f:uri.resource(path:'Icons/loader.gif')}" alt="My Image" id="loaderimage"/>
-<script type="text/javascript">
-/* <![CDATA[ */
-var loaderimg = $('#loaderimage').attr('src');
-console.log(loaderimg);
-$('.fixedAjaxDOMWindow').openDOMWindow({ 
-	height:200, 
-	width:400, 
-	positionType:'fixed', 
-	positionTop:300, 
-	positionLeft:300, 
-	eventType:'click', 
-	loader:1, 
-	loaderImagePath:loaderimg, 
-	loaderHeight:16, 
-	loaderWidth:17, 
-	windowSource:'ajax', 
-	windowHTTPType:'get', 
-	modal: 0,
-	windowSourceAttrURL:'href'
-});
+	<section id="head">
+		<h4 class="h4_mn"><f:translate key="shout.ttlcccoshoutbox">this is just a empty marker (tomeccco)</f:translate></h4>
+		<f:form.errors>
+			<div id="bx_error">
+				<f:for each="{error.errors}" as="errorDetail">
+					<f:cycle values="{0: '',1: '-'}" as="zebraClass">
+						{zebraClass}
+					</f:cycle>
+					<f:cycle values="{0: 'name',1: 'shout'}" as="zebraClass1">
+						<f:translate key="shout.error.{errorDetail.propertyName}" htmlEscape="false">{errorDetail.propertyName}</f:translate>
+					</f:cycle>
+				</f:for>
+			</div>
+		</f:form.errors>
+	</section>
+	<section id="bx_shouts">
+		<ul class="ul_shouts">
+			<shout:Fsbcyc each="{shouts}" as="oneshout">
+				<li>
+					<strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
+					{oneshout.shout}
+				</li>
+			</shout:Fsbcyc>
+		</ul>
+	</section>
+	<f:link.action action="archive" controller="Shout" arguments="{shout : 1}" id="archive" class="fixedAjaxDOMWindoww">archive</f:link.action>
+	<section>
+	<f:form method="post" action="createshout" name="shout" object="{shout}" id="f_shout">
+		<fieldset id="fssht">
+			<label for="Name" class="lblfssht">Name:</label> 
+			<f:form.textfield property="name" name="name" class="inp_nme"/>
+			<label for="Shout" class="lblfssht">Shout:</label> 
+			<f:form.textarea rows="5" cols="30" property="shout" name="shout" class="tx_shts" />
+			<f:form.submit value="submit" name="submit" id="bn_shout"/>
+		</fieldset>
+	</f:form>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	$(document).ready(function(){
+		// check stringlength
+		function fc_chstrnglength(strng,srt,end) {
+			if(strng.length>srt&&strng.length<end){
+				return true;
+			}else{
+				return false;
+			}
+		}	
+		var uri = "]]>{f:uri.action(action:'createshoutajax' controller:'Shout' pageType:'19999')}<![CDATA[";	
+		var form = $("#shout");
+		var errmssgenme = "]]>{f:translate(key:'shout.error.name',htmlEscape:'false',default:'Enter valid name')}<![CDATA[";
+		var errmssgeshout = "]]>{f:translate(key:'shout.error.shout',htmlEscape:'false',default:'Enter valid shout')}<![CDATA[";
+		$("#shout").submit(function(event) {
+			// check if all entries are valid
+			var validname = fc_chstrnglength($('.inp_nme').val(),2,30);
+			var validshout = fc_chstrnglength($('.tx_shts').val(),5,210);			
+			if(validname==true&&validshout==true){
+				$.ajax({
+					type: "POST",
+					url: uri,
+					data: form.serialize(),
+					success: function(data) {
+						var items = [];
+						$.each(data, function(key, val) {
+							string = "<li><strong>"+data.name+"</strong> "+"("+data.date+")"+"<br/>"+data.shout+"</li>";
+						});
+						$('.ul_shouts').prepend(string);					
+					}
+				})
+				return false;				
+			}else{
+				$('#bx_error').remove();
+				var errmessage = errmssgenme+' - '+errmssgeshout;
+				if(validname==true&&validshout==false){
+					errmessage = errmssgeshout;
+				}
+				if(validname==false&&validshout==true){
+					errmessage = errmssgenme;
+				}
+				$('#head').append('<div id="bx_error">'+errmessage+'</div>');
+			}
+			event.preventDefault();
+		});		
+		var loaderimg = "]]>{f:uri.resource(path:'Layout/loader.gif')}<![CDATA[";
+		var uri = "]]>{f:uri.action(action:'readarchiveajax' controller:'Shout' pageType:'19999')}<![CDATA[";	
+		var dclt = ($(document).width()/2)-250;
+		var dctp = ($(document).height()/2)-125;
+		var bgimg = "]]>{f:uri.resource(path:'/Layout/bx_shoutbox.gif')}<![CDATA[";
+		$('#archive').click(function(event){
+			event.preventDefault();
+			$(this).openDOMWindow({
+				eventType:null, 
+				positionType: 'absolute',
+				positionLeft: dclt,
+				positionTop: dctp,
+				windowPadding: '0',
+				loader:1, 
+				loaderImagePath: loaderimg, 
+				loaderHeight:1, 
+				loaderWidth:470,
+				width:500,
+				height:270,
+				borderSize: 0,
+				overlayColor: '#000000',
+				draggable: 1,
+				windowBGColor: 'transparent',
+				borderColor:'none',
+				windowSource:'ajax', 
+				windowHTTPType: 'get',
+				windowBGImage: 'typo3conf/ext/ccco_shoutbox/Resources/Public/Layout/bx_shoutbox.gif',
+				windowSourceURL: uri
+			});
+		});			
+	});	
 /* ]]> */
 </script>
-</section>
-<f:form.textfield property="name" name="name" /><br />
-<f:form.textarea rows="5" cols="30" property="shout" name="shout" /><br />
-<f:form.submit value="submit" name="submit" id="bn_shout"/>
-<script type="text/javascript">
-	$(document).ready(function(){	
-		var uri = '<f:uri.action action="createshoutajax" controller="Shout" pageType="19999" />';	
-		var form = $("#shout");
-		$("#shout").submit(function() {
-			console.log("uri = "+ uri + "end");
-			$.ajax({
-				type: "POST",
-				url: uri,
-				data: form.serialize(),
-				success: function(data) {
-					console.log("ajaxrequest suceed");
-					console.log(data);
-					var items = [];
-					$.each(data, function(key, val) {
-						string = "<li><strong>"+data.name+"</strong> "+"("+data.date+")"+"<br/>"+data.shout+"</li>";
-					});
-					console.log(items.join(''));
-					$('#ul_shouts').prepend(string);					
-				}
-			})
-				return false;
-		});
-	})
-</script>
-</f:form>
-<f:link.action action="index" controller="Shout" arguments="{shout : 1}">home</f:link.action>
-<f:link.action action="addshout">addshout</f:link.action>
-<f:link.action action="archive" controller="Shout" arguments="{shout : 1}">archive</f:link.action>
+</section>	
 </div>

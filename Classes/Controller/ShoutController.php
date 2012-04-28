@@ -48,8 +48,15 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	public function indexAction(Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL) {
 		//i serve the template with a var called shout
-		$this->view->assign('shouts', $this->shoutRepository->findAll());
+		$this->view->assign('shouts', $this->shoutRepository->findAmount());
 		$this->view->assign('shout', $shout);
+		if ($shout == NULL) {
+            //$myForm = new Tx_MyExt_Domain_Model_MyForm;
+        } else {
+            $formErrors = $this->request->getErrors();
+            //$formErrors = $formErrors['myForm']->getErrors();
+            $this->view->assign('formErrors', $formErrors);
+        }
 	}
 
 	/**
@@ -71,17 +78,38 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	 */
 	 public function createshoutAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
 	 	$this->shoutRepository->add($shout);
+		$this->redirect('index');
 	 }
 	 
 	 /**
 	 * Creates a new shout
 	 *
-	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout  
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout 
 	 * @return void
 	 */
 	 public function createshoutajaxAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	 
 	 	$this->shoutRepository->add($shout);
-		$tempdate = $shout->getDate();
+		$this->forward('readshoutajax');
+		//$this->redirect('readshoutajax');
+		/*$tempdate = $shout->getDate();
+		return json_encode(
+			array(
+      			'name'  => $shout->getName(),
+				'date' => $shout->getDate(),
+      			'shout'   => $shout->getShout(),
+    		)
+		);*/
+	 }
+	 
+	  /**
+	 * Creates a new shout
+	 *
+	 * @param Tx_CccoShoutbox_Domain_Model_Shout $shout 
+	 * @return void
+	 */
+	 public function readshoutajaxAction(Tx_CccoShoutbox_Domain_Model_Shout $shout){	
+	 //$this->view->assign('shouts', $this->shoutRepository->findAmount());
+	 	$tempdate = $shout->getDate(); 
 		return json_encode(
 			array(
       			'name'  => $shout->getName(),
@@ -133,6 +161,16 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	public function domwdwAction() {
 		$this->view->assign('shouts', $this->shoutRepository->findAll());
 	}
+	
+	 /**
+	 * Reads shoutarchive
+	 *
+	 * ****@param Tx_CccoShoutbox_Domain_Model_Shout $shout  
+	 * @return void
+	 */
+	 public function readarchiveajaxAction(){	 
+	 	$this->view->assign('shouts', $this->shoutRepository->findAll());
+	 }
 	 
 }
 ?>

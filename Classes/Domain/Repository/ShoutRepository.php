@@ -25,7 +25,18 @@
 /**
  * A repository for shouts
  */
-class Tx_CccoShoutbox_Domain_Repository_ShoutRepository extends Tx_Extbase_Persistence_Repository {
-
+class Tx_CccoShoutbox_Domain_Repository_ShoutRepository extends Tx_Extbase_Persistence_Repository {	
+	/**
+	* Find amount of shouts 
+	* @param number $limit limit
+	* @return object 
+	* */
+	public function findAmount($limit = 7) {
+		$query = $this->createQuery();
+		$query->setOrderings(array('date' => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
+		$query->setLimit((integer)$limit);
+		$result = $query->execute();				
+		return $result;
+	}
 }
 ?>

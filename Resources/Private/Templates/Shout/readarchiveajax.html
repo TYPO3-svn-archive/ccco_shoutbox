@@ -1,0 +1,40 @@
+{namespace shout=Tx_CccoShoutbox_ViewHelpers}
+<h4 class="h4_arcv"><f:translate key="shout.ttlcccoshoutbox">ccco_shoutbox</f:translate></h4>
+<h5 class="h5_arcv"><f:translate key="shout.ttlarchive">Archive</f:translate></h5>
+<shout:widget.paginate objects="{shouts}" as="paginatedNews" configuration="{itemsPerPage: 4, insertAbove: 0, insertBelow: 1}">
+	<section id="bx_ajshoutsarchive">
+		<ul class="ul_shouts">
+			<f:for each="{paginatedNews}" as="newsItem">
+				<li>
+					<strong>{newsItem.name}</strong> (<f:format.date format="d-m-Y H:i">{newsItem.date}</f:format.date>)<br />
+					{newsItem.shout}
+				</li>			
+			</f:for>
+		</ul>
+	</section>
+</shout:widget.paginate>
+<script type="text/javascript">
+/* <![CDATA[ */
+$(document).ready(function(){	
+	$('.ul_pgs li a').click(function(event) {		
+		var imgsrc = "]]>{f:uri.resource(path:'Layout/loader.gif')}<![CDATA[";
+		var imgtg = '<img src="'+imgsrc+'" alt="loader">';
+		$('#bx_ajshoutsarchive').remove();
+		$('.ul_pgs').remove();
+		$('.h5_arcv').remove();
+		$('.h4_arcv').replaceWith('<img src="'+imgsrc+'" alt="loader" id="img_loader">');
+		var uri = $(this).attr('href');
+		$.ajax({
+  			url: uri,
+			dataType: "html",
+  			success: function(data) {
+				$('#DOMWindow').empty();
+				$("#DOMWindow").append(data);
+  			}
+		});
+		event.preventDefault();
+		return false;					
+	});
+});	
+/* ]]> */
+</script>			

@@ -29,11 +29,13 @@ class Tx_CccoShoutbox_Domain_Model_Shout extends Tx_Extbase_DomainObject_Abstrac
 	
 	/**
 	 * @var string
+	 * @validate StringLength(minimum=3, maximum=30)
 	 */
 	protected $name;
 
 	/**
 	 * @var string
+	 * @validate StringLength(minimum=5, maximum=210)
 	 */
 	protected $shout;
 

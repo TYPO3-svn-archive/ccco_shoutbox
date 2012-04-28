@@ -1,0 +1,14 @@
+ {namespace shout=Tx_CccoShoutbox_ViewHelpers}
+<div id="crcccosb">
+	<h3><f:translate key="shout.ttlcccoshoutbox">this is just a empty marker (tomeccco)</f:translate></h3>
+	<f:widget.pager objects="{shouts}" as="paginatedoneshout" configuration="{itemsPerPage: 4, insertAbove: 0, insertBelow: 1}">
+		<div id="bx_shoutarchive">
+			<f:for each="{paginatedoneshout}" as="oneshout">
+				<strong>{oneshout.name}</strong> (<f:format.date format="d-m-Y H:i">{oneshout.date}</f:format.date>)<br />
+				{oneshout.shout}<br />
+			</f:for>
+		</div>
+	</f:widget.paginate>
+</div>
+
+
