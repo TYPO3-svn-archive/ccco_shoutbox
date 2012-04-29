@@ -14,5 +14,5 @@ plugin.tx_cccoshoutbox {
     	storagePid = 0
   	}
 }
-
+#page.includeJS.tx_ccco_shoutbox_file_1 = EXT:ccco_shoutbox/Resources/Public/Js/ccco_shoutbox.js
 

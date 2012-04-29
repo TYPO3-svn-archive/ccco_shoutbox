@@ -58,6 +58,9 @@ class Tx_CccoShoutbox_Controller_ShoutController extends Tx_Extbase_MVC_Controll
 	* @dontvalidate $shout
 	*/
 	public function indexAction(Tx_CccoShoutbox_Domain_Model_Shout $shout = NULL) {
+		$GLOBALS['TSFE']->additionalHeaderData[101] = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()).'Resources/Public/Js/ccco_shoutbox.js"></script>';
+		$GLOBALS['TSFE']->additionalHeaderData[102] = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()).'Resources/Public/Js/jquery-ui.min.js"></script>';
+		$GLOBALS['TSFE']->additionalHeaderData[103] = '<script type="text/javascript" src="'.t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()).'Resources/Public/Js/jquery.DOMWindow.js"></script>';
 		// i serve the template with a var called shout
 		$this->view->assign('shouts', $this->shoutRepository->findAmount());
 		$this->view->assign('shout', $shout);

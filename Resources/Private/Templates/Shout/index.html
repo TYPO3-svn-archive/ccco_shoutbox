@@ -25,7 +25,7 @@
 			</shout:Fsbcyc>
 		</ul>
 	</section>
-	<f:link.action action="archive" controller="Shout" arguments="{shout : 1}" id="archive" class="fixedAjaxDOMWindoww">archive</f:link.action>
+	<f:link.action action="archive" controller="Shout" arguments="{shout : 1}" id="archive" class="fixedAjaxDOMWindoww">archive</f:link.action>		
 	<section>
 	<f:form method="post" action="createshout" name="shout" object="{shout}" id="f_shout">
 		<fieldset id="fssht">
@@ -36,84 +36,11 @@
 			<f:form.submit value="submit" name="submit" id="bn_shout"/>
 		</fieldset>
 	</f:form>
-	<script type="text/javascript">
-	/* <![CDATA[ */
-	$(document).ready(function(){
-		// check stringlength
-		function fc_chstrnglength(strng,srt,end) {
-			if(strng.length>srt&&strng.length<end){
-				return true;
-			}else{
-				return false;
-			}
-		}	
-		var uri = "]]>{f:uri.action(action:'createshoutajx' controller:'Shout' pageType:'19999')}<![CDATA[";	
-		var form = $("#f_shout");
-		var errmssgenme = "]]>{f:translate(key:'shout.error.name',htmlEscape:'false',default:'Enter valid name')}<![CDATA[";
-		var errmssgeshout = "]]>{f:translate(key:'shout.error.shout',htmlEscape:'false',default:'Enter valid shout')}<![CDATA[";
-		$("#f_shout").submit(function(event) {
-			// check if all entries are valid
-			var validname = fc_chstrnglength($('.inp_nme').val(),2,30);
-			var validshout = fc_chstrnglength($('.tx_shts').val(),5,210);			
-			if(validname==true&&validshout==true){
-				$.ajax({
-					type: "POST",
-					url: uri,
-					data: form.serialize(),
-					success: function(data) {
-						var items = [];
-						$.each(data, function(key, val) {
-							string = "<li><strong>"+data.name+"</strong> "+"("+data.date+")"+"<br/>"+data.shout+"</li>";
-						});
-						$('.ul_shouts').prepend(string);					
-					}
-				})
-				return false;				
-			}else{
-				$('#bx_error').remove();
-				var errmessage = errmssgenme+' - '+errmssgeshout;
-				if(validname==true&&validshout==false){
-					errmessage = errmssgeshout;
-				}
-				if(validname==false&&validshout==true){
-					errmessage = errmssgenme;
-				}
-				$('#head').append('<div id="bx_error">'+errmessage+'</div>');
-			}
-			event.preventDefault();
-		});	
-		$('#archive').click(function(event){
-			var loaderimg = "]]>{f:uri.resource(path:'Layout/loader.gif')}<![CDATA[";
-			var uri = "]]>{f:uri.action(action:'archiveajx' controller:'Shout' pageType:'19999')}<![CDATA[";	
-			var dclt = ($(document).width()/2)-250;
-			var dctp = ($(document).height()/2)-125;
-			var bgimg = "]]>{f:uri.resource(path:'Layout/bx_shoutbox.gif')}<![CDATA[";
-			event.preventDefault();
-			$(this).openDOMWindow({
-				eventType:null, 
-				positionType: 'absolute',
-				positionLeft: dclt,
-				positionTop: dctp,
-				windowPadding: '0',
-				loader:1, 
-				loaderImagePath: loaderimg, 
-				loaderHeight:1, 
-				loaderWidth:470,
-				width:500,
-				height:270,
-				borderSize: 0,
-				overlayColor: '#000000',
-				draggable: 1,
-				windowBGColor: 'transparent',
-				borderColor:'none',
-				windowSource:'ajax', 
-				windowHTTPType: 'get',
-				windowBGImage: bgimg,
-				windowSourceURL: uri
-			});
-		});			
-	});	
-/* ]]> */
-</script>
-</section>	
+</section>
+<ul class="ul_dta">
+	<li id="domwindowbg" data-domwindowbg="{f:uri.resource(path:'Layout/bx_shoutbox.gif')}"></li>
+	<li id="loaderimg" data-loaderimg="{f:uri.resource(path:'Layout/loader.gif')}"></li>
+	<li id="ajxloaddomwindow" data-ajxloaddomwindow="{f:uri.action(action:'archiveajx' controller:'Shout' pageType:'19999')}"></li>
+	<li id="ajxloadshouts" data-ajxloadshouts="{f:uri.action(action:'createshoutajx' controller:'Shout' pageType:'19999')}"></li>
+</ul>	
 </div>

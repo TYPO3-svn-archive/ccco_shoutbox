@@ -1,0 +1,4 @@
+# Include Ccco_Shoutbox default js
+page.headerData.18 = TEXT
+page.headerData.18.value = <script type="text/javascript" src="EXT:ccco_shoutbox/Resources/Public/Js/ccco_shoutbox.js"></script> 
+
