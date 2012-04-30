@@ -25,22 +25,16 @@
 			</shout:Fsbcyc>
 		</ul>
 	</section>
-	<f:link.action action="archive" controller="Shout" arguments="{shout : 1}" id="archive" class="fixedAjaxDOMWindoww">archive</f:link.action>		
+	<a href="{f.uri.action(action:'archive', controller:'Shout' argumennts:'{shout : 1}')}" data-bgdmwndw="{f:uri.resource(path:'Layout/bx_shoutbox.gif')}" data-ldrimg="{f:uri.resource(path:'Layout/loader.gif')}" data-uridmwndw="{f:uri.action(action:'archiveajx' controller:'Shout' pageType:'19999')}" id="archive" class="fixedAjaxDOMWindow">archive</a>	
 	<section>
 	<f:form method="post" action="createshout" name="shout" object="{shout}" id="f_shout">
-		<fieldset id="fssht">
-			<label for="Name" class="lblfssht">Name:</label> 
+		<fieldset id="fssht" data-urishts="{f:uri.action(action:'createshoutajx' controller:'Shout' pageType:'19999')}">
+			<label for="Name" class="lb_nme" data-errnme="{f:translate(key:'name', default:'Enter valid Name')}">Name:</label> 
 			<f:form.textfield property="name" name="name" class="inp_nme"/>
-			<label for="Shout" class="lblfssht">Shout:</label> 
+			<label for="Shout" class="lb_sht" data-errshout="{f:translate(key:'name', default:'Enter valid Shout')}">Shout:</label> 
 			<f:form.textarea rows="5" cols="30" property="shout" name="shout" class="tx_shts" />
-			<f:form.submit value="submit" name="submit" id="bn_shout"/>
+			<f:form.submit value="submit" name="submit" id="bn_shout" />
 		</fieldset>
 	</f:form>
-</section>
-<ul class="ul_dta">
-	<li id="domwindowbg" data-domwindowbg="{f:uri.resource(path:'Layout/bx_shoutbox.gif')}"></li>
-	<li id="loaderimg" data-loaderimg="{f:uri.resource(path:'Layout/loader.gif')}"></li>
-	<li id="ajxloaddomwindow" data-ajxloaddomwindow="{f:uri.action(action:'archiveajx' controller:'Shout' pageType:'19999')}"></li>
-	<li id="ajxloadshouts" data-ajxloadshouts="{f:uri.action(action:'createshoutajx' controller:'Shout' pageType:'19999')}"></li>
-</ul>	
+</section>	
 </div>

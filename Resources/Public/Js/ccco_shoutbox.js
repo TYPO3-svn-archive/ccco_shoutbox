@@ -7,15 +7,18 @@ $(document).ready(function(){
 			return false;
 		}
 	}
-	var domwindowbg = $('#domwindowbg').attr('data-domwindowbg');
-	var loaderimg = $('#loaderimg').attr('data-loaderimg');
-	var ajxloaddomwindow = $('#ajxloaddomwindow').attr('data-ajxloaddomwindow');
-	var ajxloadshouts = $('#ajxloadshouts').attr('data-ajxloadshouts');			
+	var bgdmwndw = $('#archive').attr('data-bgdmwndw');
+	var ldrimg = $('#archive').attr('data-ldrimg');
+	var uridmwndw = $('#archive').attr('data-uridmwndw');
+	var urishts = $('#fssht').attr('data-urishts');	
+	var errnme = $('.lb_nme').attr('data-errnme');	
+	var errorshout = $('.lb_sht').attr('data-errshout');	
+			
 
-	var uri = ajxloadshouts;	
+	var uri = urishts;	
 	var form = $("#f_shout");
-	var errmssgenme = "]]>{f:translate(key:'shout.error.name',htmlEscape:'false',default:'Enter valid name')}<![CDATA[";
-	var errmssgeshout = "]]>{f:translate(key:'shout.error.shout',htmlEscape:'false',default:'Enter valid shout')}<![CDATA[";
+	var errmssgenme = errnme;
+	var errmssgeshout = errorshout;
 	$("#f_shout").submit(function(event) {
 		// check if all entries are valid
 		var validname = fc_chstrnglength($('.inp_nme').val(),2,30);
@@ -49,10 +52,11 @@ $(document).ready(function(){
 	});	
 	$('#archive').click(function(event){
 		var uri = 'index.php?id=3&type=19999&tx_cccoshoutbox_pi1%5Baction%5D=archiveajx&tx_cccoshoutbox_pi1%5Bcontroller%5D=Shout&cHash=1a61c51c811a9e9ce967f577844b836e';
+		var uri = uridmwndw;
 		var dclt = ($(document).width()/2)-250;
 		var dctp = ($(document).height()/2)-125;
-		var loaderimg = loaderimg;
-		var bgimg = domwindowbg;
+		var loaderimg = ldrimg;
+		var bgimg = bgdmwndw;
 		event.preventDefault();
 		$(this).openDOMWindow({
 			eventType:null, 
