@@ -2,7 +2,7 @@
 <h4 class="h4_arcv"><f:translate key="shout.ttlcccoshoutbox">ccco_shoutbox</f:translate></h4>
 <h5 class="h5_arcv"><f:translate key="shout.ttlarchive">Archive</f:translate></h5>
 <shout:widget.paginate objects="{shouts}" as="paginatedNews" configuration="{itemsPerPage: 4, insertAbove: 0, insertBelow: 1}">
-	<section id="bx_ajshoutsarchive">
+	<section id="bx_ajxshtsacve">
 		<ul class="ul_shouts">
 			<f:for each="{paginatedNews}" as="newsItem">
 				<li>
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	$('.ul_pgs li a').click(function(event) {		
 		var imgsrc = "]]>{f:uri.resource(path:'Layout/loader.gif')}<![CDATA[";
 		var imgtg = '<img src="'+imgsrc+'" alt="loader">';
-		$('#bx_ajshoutsarchive').remove();
+		$('#bx_ajxshtsacve').remove();
 		$('.ul_pgs').remove();
 		$('.h5_arcv').remove();
 		$('.h4_arcv').replaceWith('<img src="'+imgsrc+'" alt="loader" id="img_loader">');

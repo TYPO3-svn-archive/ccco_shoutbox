@@ -51,7 +51,6 @@ $(document).ready(function(){
 		event.preventDefault();
 	});	
 	$('#archive').click(function(event){
-		var uri = 'index.php?id=3&type=19999&tx_cccoshoutbox_pi1%5Baction%5D=archiveajx&tx_cccoshoutbox_pi1%5Bcontroller%5D=Shout&cHash=1a61c51c811a9e9ce967f577844b836e';
 		var uri = uridmwndw;
 		var dclt = ($(document).width()/2)-250;
 		var dctp = ($(document).height()/2)-125;

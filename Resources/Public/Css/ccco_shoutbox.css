@@ -1,5 +1,5 @@
 @charset "utf-8";
-	/* CSS Document */
+/* CSS Document */
 #crcccosb {
 	padding:0px 0px 0px 0px;
 	width:320px;
@@ -10,9 +10,28 @@
 	background-repeat:no-repeat;
 	background-color:#FFF;
 }
+.h4_mn {
+	visibility:hidden;
+	margin:0px;
+	padding:0px;
+	height:15px;
+	width:400px;
+}
+.h5_arcv {
+	visibility:hidden;
+	margin:0px;
+	padding:0px;
+	height:10px;
+}
+.h4_arcv {
+	visibility:hidden;
+	margin:0px;
+	padding:0px;
+	height:20px;
+}
 #head {
+	width:320px;	
 	height:95px;
-	width:320px;
 }
 #bx_shouts {
 	margin:0px 0px 0px 0px;
@@ -56,17 +75,12 @@
 	padding:0px 0px 0px 0px;
 	width:320px;
 }
-.lb_nme{
+.lb_nme {
 	display:block;
 	padding:0px 0px 0px 0px;
 	width:320px;
 }
-.lb_sht{
-	display:block;
-	padding:0px 0px 0px 0px;
-	width:320px;
-}
-.lblfssht {
+.lb_sht {
 	display:block;
 	padding:0px 0px 0px 0px;
 	width:320px;
@@ -85,14 +99,14 @@
 #img_loader {
 	margin:120px 0px 0px 242px;
 }
-#bx_ajshoutsarchive {
+#bx_ajxshtsacve {
 	margin:0px 0px 0px 0px;
 	padding:5px;
 	width:470px;
 	height:170px;
 	font-family:Arial,Helvetica,sans-serif;
 	font-size:12px;
-	color:black;
+	color:#000000;
 }
 .ul_shouts {
 	margin:0px;
@@ -104,6 +118,7 @@
 	color:#E6E6E6;
 	text-decoration:underline;
 }
+/* pagebrowserwidget srt*/
 .ul_pgs {
 	float:left;
 	padding:0px;
@@ -113,146 +128,140 @@
 }
 .ul_pgs li {
 	float:left;
-	padding:0px;
 	margin:0px;
+	padding:0px;	
 	width:20px;
 	height:20px;
 	background-color:#999;
 }
 .li_fst span {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
-	margin:0px;
+	margin:0px;	
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prfirst.gif);
 }
 .li_fst a {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prfirst.gif);
 }
 .li_fst a:hover {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-position:0px -20px;
 }
 .li_prv a {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
-	margin:0px;
+	margin:0px;	
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prback.gif);
 }
 .li_prv a:hover {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-position:0px -20px;
 }
 .li_prv span {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prback_n.gif);
 }
 .li_pg a {
 	display:inline-block;
-	padding:3px 0px 0px 3px;
 	margin:0px;
+	padding:3px 0px 0px 3px;
 	width:17px;
 	height:17px;
 	color:#FFF;
 	text-decoration:none;
-	background-color:#e6e6e6;
 	font-weight:bold;
+	background-color:#e6e6e6;
 }
 .li_pg a:hover {
 	display:inline-block;
-	padding:3px 0px 0px 3px;
 	margin:0px;
+	padding:3px 0px 0px 3px;
 	width:17px;
 	height:17px;
 	color:#FFF;
+	font-weight:bold;
 	text-decoration:none;
 	background-color:#f2f2f2;
-	font-weight:bold;
 }
 .li_pg span {
 	display:inline-block;
-	padding:3px 0px 0px 3px;
 	margin:0px;
+	padding:3px 0px 0px 3px;
 	width:17px;
 	height:17px;
+	font-weight:bold;
 	color:#FFF;
 	text-decoration:none;
 	background-color:#f2f2f2;
-	font-weight:bold;
 }
 .li_nxt a {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
-	margin:0px;
+	margin:0px;	
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prforward.gif);
 }
 .li_nxt a:hover {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
-	margin:0px;
+	margin:0px;	
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-position:0px -20px;
 }
 .li_nxt span {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 }
 .li_lst a {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-image:url(../Layout/bn_prlast.gif);
 }
 .li_lst a:hover {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 	background-position:0px -20px;
 }
 .li_lst span {
 	display:inline-block;
-	padding:0px 0px 0px 0px;
 	margin:0px;
+	padding:0px;
 	width:20px;
 	height:20px;
 }
-.h4_mn {
-	visibility:hidden;
-	padding:0px;
-	margin:0px;
-	height:15px;
-	width:400px;
-}
+/* pagebrowserwidget end*/
 #DOMWindow .ul_pgs {
 	margin:24px 0px 0px 0px;
 	padding:0px;
@@ -260,18 +269,6 @@
 #DOMWindow .ul_pgs li {
 	margin:0px 5px 0px 0px;
 }
-.h4_arcv {
-	visibility:hidden;
-	margin:0px;
-	padding:0px;
-	height:20px;
-}
-.h5_arcv {
-	visibility:hidden;
-	margin:0px;
-	padding:0px;
-	height:10px;
-}
-.ul_dta {
-	display:none;
-}
+
+
+
